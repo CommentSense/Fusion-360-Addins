@@ -11,9 +11,12 @@ def run(context):
         
         ui  = app.userInterface
         ui.messageBox('Select two cylindrical faces')
-        selectedItem1 = ui.selectEntity("Select a Cylinder", "CylindricalFaces")
+        
+        # selection filters
+        # https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-03033DE6-AD8E-46B3-B4E6-DADA8D389E4E
+        selectedItem1 = ui.selectEntity("Select a body", "Bodies")
         selectedItemPoint1 = selectedItem1.point
-        selectedItem2 = ui.selectEntity("Select another Cylinder", "CylindricalFaces")
+        selectedItem2 = ui.selectEntity("Select another body", "Bodies")
         selectedItemPoint2 = selectedItem2.point
         lengthBetweenPoints = selectedItemPoint1.distanceTo(selectedItemPoint2)
     
